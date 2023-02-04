@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "data_structure.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -75,14 +76,6 @@ struct themData {
     int NgayThangNamNhan;
     double quangDuong;
     int ID;
-};
-
-//Page CapNhatGia
-struct Price {
-    double DOC_service = 12000;
-    double DOC_distance = 2000;
-    double PAC_weight = 10000;
-    double PAC_distance = 2000;
 };
 
 //PageDoanhThu
