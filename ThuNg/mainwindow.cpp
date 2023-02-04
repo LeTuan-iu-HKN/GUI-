@@ -19,11 +19,6 @@ MainWindow::MainWindow(QWidget *parent)
 
 Price random;
 
-void MainWindow::on_pushButton_1_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(6);
-}
-
 
 void MainWindow::on_pushButton_2_clicked()
 {
@@ -224,37 +219,37 @@ void MainWindow::on_pushButton_7_clicked()
 {
     TK t;
     t.diaChiTimKiem = ui->textEdit_52->toPlainText().toStdString();
-    QTableWidgetItem *item = new QTableWidgetItem;
-    item->setText("danny");
-    ui->tableWidgetDSDiaChi->setItem(2, 2, item);
-}
-//    std::vector<ShippingForm*> &temp = List.FormList;
-//    for(int i = 0; i < List.FormList.size(); i++) {
-//        ui->tableWidgetDSDiaChi->setRowCount(i+1);
-//        QTableWidgetItem *item1 = new QTableWidgetItem;
-//        item1->setText(QString::fromStdString(temp[i]->sender_name)); ui->tableWidgetDSDiaChi->setItem(i, 1, item1);
-//        QTableWidgetItem *item2 = new QTableWidgetItem;
-//        item2->setText(QString::fromStdString(temp[i]->receiver_name)); ui->tableWidgetDSDiaChi->setItem(i, 2, item2);
-//        QTableWidgetItem *item3 = new QTableWidgetItem;
-//        item3->setText(QString::fromStdString(temp[i]->from_address)); ui->tableWidgetDSDiaChi->setItem(i, 3, item3);
-//        QTableWidgetItem *item4 = new QTableWidgetItem;
-//        item4->setText(QString::fromStdString(temp[i]->to_address)); ui->tableWidgetDSDiaChi->setItem(i, 4, item4);
-//        QTableWidgetItem *item5 = new QTableWidgetItem;
-//        item5->setText(QString::fromStdString(convertDate(temp[i]->sent_date))); ui->tableWidgetDSDiaChi->setItem(i, 5, item5);
-//        QTableWidgetItem *item6 = new QTableWidgetItem;
-//        item6->setText(QString::fromStdString(convertDate(temp[i]->received_date))); ui->tableWidgetDSDiaChi->setItem(i, 6, item6);
-//        QTableWidgetItem *item7 = new QTableWidgetItem;
-//        item7->setText(QString::number(temp[i]->revenue)); ui->tableWidgetDSDiaChi->setItem(i, 7, item7);
-//        delete item1;
-//        delete item2;
-//        delete item3;
-//        delete item4;
-//        delete item5;
-//        delete item6;
-//        delete item7;
+//    QTableWidgetItem *item = new QTableWidgetItem;
+//    item->setText("danny");
+//    ui->tableWidgetDSDiaChi->setItem(2, 2, item);
+//}
+    std::vector<ShippingForm*> &temp = List.FormList;
+    for(int i = 0; i < List.FormList.size(); i++) {
+        ui->tableWidgetDSDiaChi->setRowCount(i+1);
+        QTableWidgetItem *item1 = new QTableWidgetItem;
+        item1->setText(QString::fromStdString(temp[i]->sender_name)); ui->tableWidgetDSDiaChi->setItem(i, 0, item1);
+        QTableWidgetItem *item2 = new QTableWidgetItem;
+        item2->setText(QString::fromStdString(temp[i]->receiver_name)); ui->tableWidgetDSDiaChi->setItem(i, 1, item2);
+        QTableWidgetItem *item3 = new QTableWidgetItem;
+        item3->setText(QString::fromStdString(temp[i]->from_address)); ui->tableWidgetDSDiaChi->setItem(i, 2, item3);
+        QTableWidgetItem *item4 = new QTableWidgetItem;
+        item4->setText(QString::fromStdString(temp[i]->to_address)); ui->tableWidgetDSDiaChi->setItem(i, 3, item4);
+        QTableWidgetItem *item5 = new QTableWidgetItem;
+        item5->setText(QString::fromStdString(convertDate(temp[i]->sent_date))); ui->tableWidgetDSDiaChi->setItem(i, 4, item5);
+        QTableWidgetItem *item6 = new QTableWidgetItem;
+        item6->setText(QString::fromStdString(convertDate(temp[i]->received_date))); ui->tableWidgetDSDiaChi->setItem(i, 5, item6);
+        QTableWidgetItem *item7 = new QTableWidgetItem;
+        item7->setText(QString::number(temp[i]->revenue)); ui->tableWidgetDSDiaChi->setItem(i, 6, item7);
+        delete item1;
+        delete item2;
+        delete item3;
+        delete item4;
+        delete item5;
+        delete item6;
+        delete item7;
 
-//    }
-//    }
+    }
+}
 //    TK t;
 //        t.diaChiTimKiem = ui->textEdit_52->toPlainText().toStdString();
 //        std::vector<ShippingForm*>& temp = List.FormList;
