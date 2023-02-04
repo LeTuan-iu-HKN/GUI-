@@ -164,23 +164,23 @@ public:
         label0->setFont(font1);
         pushButton_1 = new QPushButton(GiaoDienChinh0);
         pushButton_1->setObjectName("pushButton_1");
-        pushButton_1->setGeometry(QRect(110, 80, 671, 61));
+        pushButton_1->setGeometry(QRect(100, 90, 671, 61));
         pushButton_1->setFont(font1);
         pushButton_2 = new QPushButton(GiaoDienChinh0);
         pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(510, 180, 311, 81));
+        pushButton_2->setGeometry(QRect(500, 210, 311, 81));
         pushButton_2->setFont(font1);
         pushButton_3 = new QPushButton(GiaoDienChinh0);
         pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setGeometry(QRect(70, 320, 301, 91));
+        pushButton_3->setGeometry(QRect(60, 370, 301, 91));
         pushButton_3->setFont(font1);
         pushButton_4 = new QPushButton(GiaoDienChinh0);
         pushButton_4->setObjectName("pushButton_4");
-        pushButton_4->setGeometry(QRect(70, 180, 301, 81));
+        pushButton_4->setGeometry(QRect(60, 210, 301, 81));
         pushButton_4->setFont(font1);
         pushButton_5 = new QPushButton(GiaoDienChinh0);
         pushButton_5->setObjectName("pushButton_5");
-        pushButton_5->setGeometry(QRect(510, 320, 311, 91));
+        pushButton_5->setGeometry(QRect(500, 370, 311, 91));
         pushButton_5->setFont(font1);
         stackedWidget->addWidget(GiaoDienChinh0);
         Them1 = new QWidget();
@@ -535,7 +535,7 @@ public:
         label0_16->setAutoFillBackground(false);
         label0_17 = new QLabel(DoanhThu4);
         label0_17->setObjectName("label0_17");
-        label0_17->setGeometry(QRect(20, 50, 252, 39));
+        label0_17->setGeometry(QRect(30, 50, 252, 39));
         QFont font11;
         font11.setFamilies({QString::fromUtf8("Segoe UI")});
         font11.setPointSize(20);
@@ -554,12 +554,12 @@ public:
         label0_19->setAutoFillBackground(false);
         label0_20 = new QLabel(DoanhThu4);
         label0_20->setObjectName("label0_20");
-        label0_20->setGeometry(QRect(20, 100, 55, 36));
+        label0_20->setGeometry(QRect(30, 100, 55, 36));
         label0_20->setFont(font11);
         label0_20->setAutoFillBackground(false);
         label0_21 = new QLabel(DoanhThu4);
         label0_21->setObjectName("label0_21");
-        label0_21->setGeometry(QRect(240, 100, 72, 36));
+        label0_21->setGeometry(QRect(250, 100, 72, 36));
         label0_21->setFont(font11);
         label0_21->setAutoFillBackground(false);
         pushButton_21 = new QPushButton(DoanhThu4);
@@ -572,10 +572,10 @@ public:
         label_6->setFont(font4);
         dateEdit = new QDateEdit(DoanhThu4);
         dateEdit->setObjectName("dateEdit");
-        dateEdit->setGeometry(QRect(80, 100, 121, 41));
+        dateEdit->setGeometry(QRect(90, 100, 121, 41));
         dateEdit_2 = new QDateEdit(DoanhThu4);
         dateEdit_2->setObjectName("dateEdit_2");
-        dateEdit_2->setGeometry(QRect(320, 100, 121, 41));
+        dateEdit_2->setGeometry(QRect(330, 100, 121, 41));
         tableWidgetDSDoanhThu = new QTableWidget(DoanhThu4);
         if (tableWidgetDSDoanhThu->columnCount() < 8)
             tableWidgetDSDoanhThu->setColumnCount(8);
@@ -602,7 +602,7 @@ public:
         tableWidgetDSDoanhThu->setFont(font12);
         pushButton_6 = new QPushButton(DoanhThu4);
         pushButton_6->setObjectName("pushButton_6");
-        pushButton_6->setGeometry(QRect(500, 100, 131, 36));
+        pushButton_6->setGeometry(QRect(510, 100, 131, 36));
         stackedWidget->addWidget(DoanhThu4);
         DanhSachDoanhThu5 = new QWidget();
         DanhSachDoanhThu5->setObjectName("DanhSachDoanhThu5");
@@ -676,7 +676,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(6);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -752,7 +752,7 @@ public:
         label0_20->setText(QCoreApplication::translate("MainWindow", "T\341\273\253 : ", nullptr));
         label0_21->setText(QCoreApplication::translate("MainWindow", "\304\220\341\272\277n : ", nullptr));
         pushButton_21->setText(QCoreApplication::translate("MainWindow", "Giao di\341\273\207n ch\303\255nh", nullptr));
-        label_6->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        label_6->setText(QString());
         QTableWidgetItem *___qtablewidgetitem = tableWidgetDSDoanhThu->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("MainWindow", "T\303\252n ng\306\260\341\273\235i g\341\273\255i", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = tableWidgetDSDoanhThu->horizontalHeaderItem(1);

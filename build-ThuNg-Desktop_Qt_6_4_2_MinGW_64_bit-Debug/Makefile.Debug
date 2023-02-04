@@ -66,7 +66,8 @@ OBJECTS       = debug/data_structure.o \
 		debug/program_object.o \
 		debug/moc_mainwindow.o
 
-DIST          =  ../ThuNg/data_structure.h \
+DIST          = D:/infor.txt \
+		D:/money.txt ../ThuNg/data_structure.h \
 		../ThuNg/file.h \
 		../ThuNg/function.h \
 		../ThuNg/init.h \
@@ -269,9 +270,10 @@ debug/moc_mainwindow.cpp: ../ThuNg/mainwindow.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h \
 		../ThuNg/data_structure.h \
 		../ThuNg/function.h \
+		../ThuNg/program_object.h \
 		debug/moc_predefs.h \
 		C:/Qt/6.4.2/mingw_64/bin/moc.exe
-	'C:\Qt\6.4.2\mingw_64\bin\moc.exe' $(DEFINES) --include 'C:/Users/MintCat/Documents/HUST/Learning Materials/20221/C-C++ Programming Language/GUI-/build-ThuNg-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/debug/moc_predefs.h' -IC:/Qt/6.4.2/mingw_64/mkspecs/win32-g++ -I'C:/Users/MintCat/Documents/HUST/Learning Materials/20221/C-C++ Programming Language/GUI-/ThuNg' -IC:/Qt/6.4.2/mingw_64/include -IC:/Qt/6.4.2/mingw_64/include/QtWidgets -IC:/Qt/6.4.2/mingw_64/include/QtGui -IC:/Qt/6.4.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ../ThuNg/mainwindow.h -o debug/moc_mainwindow.cpp
+	'C:\Qt\6.4.2\mingw_64\bin\moc.exe' $(DEFINES) --include 'C:/Users/84904/Documents/DEV C/build-ThuNg-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/debug/moc_predefs.h' -IC:/Qt/6.4.2/mingw_64/mkspecs/win32-g++ -I'C:/Users/84904/Documents/DEV C/ThuNg' -IC:/Qt/6.4.2/mingw_64/include -IC:/Qt/6.4.2/mingw_64/include/QtWidgets -IC:/Qt/6.4.2/mingw_64/include/QtGui -IC:/Qt/6.4.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ../ThuNg/mainwindow.h -o debug/moc_mainwindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -454,10 +456,10 @@ debug/main.o: ../ThuNg/main.cpp ../ThuNg/mainwindow.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h \
 		../ThuNg/data_structure.h \
 		../ThuNg/function.h \
+		../ThuNg/program_object.h \
 		../ThuNg/library.h \
 		../ThuNg/file.h \
 		../ThuNg/init.h \
-		../ThuNg/program_object.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QApplication \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qapplication.h \
 		C:/Qt/6.4.2/mingw_64/include/QtCore/qcoreapplication.h \
@@ -623,6 +625,7 @@ debug/mainwindow.o: ../ThuNg/mainwindow.cpp ../ThuNg/mainwindow.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h \
 		../ThuNg/data_structure.h \
 		../ThuNg/function.h \
+		../ThuNg/program_object.h \
 		ui_mainwindow.h \
 		C:/Qt/6.4.2/mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QApplication \
