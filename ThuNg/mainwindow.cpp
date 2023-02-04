@@ -44,10 +44,14 @@ void MainWindow::on_pushButton_3_clicked()
     ui->label_54->setText(QString::number(random.PAC_distance, 'f', 0));
 }
 
-
+//PageTimKiem
 void MainWindow::on_pushButton_4_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget->setCurrentIndex(6);
+    ui->tableWidgetDSDiaChi->setRowCount(7);
+    ui->tableWidgetDSDiaChi->setColumnCount(8);
+    TK t;
+    t.diaChiTimKiem = ui->textEdit_52->toPlainText().toStdString();
 }
 
 
@@ -206,11 +210,11 @@ void MainWindow::on_pushButton_13_clicked()
 //PageDoanhThu
 void MainWindow::on_pushButton_6_clicked()
 {
-    int doanhThu;
-    int NgayThangNamBD;
-    int NgayThangNamKT;
-    NgayThangNamBD =  ui->dateEdit->date().toString("yyyyMMdd").toInt();
-    NgayThangNamKT =  ui->dateEdit_2->date().toString("yyyyMMdd").toInt();
-    ui->label_6->setText(QString::fromStdString(std::to_string(doanhThu)));
+    DT r;
+    r.NgayThangNamBD =  ui->dateEdit->date().toString("yyyyMMdd").toInt();
+    r.NgayThangNamKT =  ui->dateEdit_2->date().toString("yyyyMMdd").toInt();
+    ui->label_6->setText(QString::fromStdString(std::to_string(r.doanhThu)));
 }
+
+//PageTimKiem
 

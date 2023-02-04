@@ -84,7 +84,16 @@ struct Price {
 };
 
 //PageDoanhThu
-    //int doanhThu;
-    //int NgayThangNamBD;
-    //int NgayThangNamKT;
+struct DT {
+    int doanhThu;
+    int NgayThangNamBD;
+    int NgayThangNamKT;
+};
+
+//PageTimkiem
+struct TK {
+    std::string diaChiTimKiem;
+};
+
+
 
