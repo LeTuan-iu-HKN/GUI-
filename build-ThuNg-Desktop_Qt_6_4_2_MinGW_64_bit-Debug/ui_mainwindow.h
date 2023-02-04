@@ -134,6 +134,7 @@ public:
     QTextEdit *textEdit_52;
     QPushButton *pushButton_26;
     QTableWidget *tableWidgetDSDiaChi;
+    QPushButton *pushButton_7;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -632,7 +633,7 @@ public:
         label0_24->setAutoFillBackground(false);
         textEdit_52 = new QTextEdit(TimTheoDiaChi6);
         textEdit_52->setObjectName("textEdit_52");
-        textEdit_52->setGeometry(QRect(150, 70, 691, 41));
+        textEdit_52->setGeometry(QRect(150, 70, 571, 41));
         textEdit_52->setFont(font10);
         pushButton_26 = new QPushButton(TimTheoDiaChi6);
         pushButton_26->setObjectName("pushButton_26");
@@ -660,6 +661,9 @@ public:
         tableWidgetDSDiaChi->setObjectName("tableWidgetDSDiaChi");
         tableWidgetDSDiaChi->setGeometry(QRect(30, 140, 811, 371));
         tableWidgetDSDiaChi->setFont(font12);
+        pushButton_7 = new QPushButton(TimTheoDiaChi6);
+        pushButton_7->setObjectName("pushButton_7");
+        pushButton_7->setGeometry(QRect(740, 70, 94, 41));
         stackedWidget->addWidget(TimTheoDiaChi6);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -672,7 +676,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(6);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -788,6 +792,7 @@ public:
         ___qtablewidgetitem14->setText(QCoreApplication::translate("MainWindow", "Lo\341\272\241i \304\221\306\241n h\303\240ng", nullptr));
         QTableWidgetItem *___qtablewidgetitem15 = tableWidgetDSDiaChi->horizontalHeaderItem(7);
         ___qtablewidgetitem15->setText(QCoreApplication::translate("MainWindow", "Thu \304\221\306\260\341\273\243c", nullptr));
+        pushButton_7->setText(QCoreApplication::translate("MainWindow", "X\303\241c nh\341\272\255n", nullptr));
     } // retranslateUi
 
 };

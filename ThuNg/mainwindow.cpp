@@ -50,8 +50,7 @@ void MainWindow::on_pushButton_4_clicked()
     ui->stackedWidget->setCurrentIndex(6);
     ui->tableWidgetDSDiaChi->setRowCount(7);
     ui->tableWidgetDSDiaChi->setColumnCount(8);
-    TK t;
-    t.diaChiTimKiem = ui->textEdit_52->toPlainText().toStdString();
+
 }
 
 
@@ -217,4 +216,11 @@ void MainWindow::on_pushButton_6_clicked()
 }
 
 //PageTimKiem
+
+
+void MainWindow::on_pushButton_7_clicked()
+{
+    TK t;
+    t.diaChiTimKiem = ui->textEdit_52->toPlainText().toStdString();
+}
 
