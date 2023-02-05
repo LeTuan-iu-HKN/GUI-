@@ -20,9 +20,20 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+    //Page Them don
+    bool isThemDonEmpty();
+
+    //Page sua don
+    bool isSuaDonEmpty();
+
+    //Page Xoa don
+    void refreshFormTable(QTableWidget*& table);
     void displayFormTable(int row, ShippingForm* Form, QTableWidget*& table);
 
 private slots:
+    // Page Them
+    void on_pushButtonXacNhanThemDon_clicked();
 
     void on_pushButton_2_clicked();
 
@@ -42,7 +53,7 @@ private slots:
 
     void on_pushButton_25_clicked();
 
-    void on_pushButton_5_clicked();
+    void on_pushButtonThongKe_clicked();
 
     void on_pushButton_26_clicked();
 
@@ -50,23 +61,27 @@ private slots:
 
     void on_pushButton_27_clicked();
 
-    void on_pushButton_clicked();
+
 
     void on_pushButton_18_clicked();
 
-    void on_pushButton_15_clicked();
+    void on_pushButtonCapNhatGia_clicked();
 
-    void on_pushButton_13_clicked();
+    void on_pushButtonDatVeMacDinh_clicked();
 
-    void on_pushButton_6_clicked();
+    void on_pushButtonXacNhanThongKeTheoThoiGian_clicked();
 
     void on_pushButton_7_clicked();
 
-    void on_pushButton_9_clicked();
+    void on_pushButtonGiaoDienXoaDon_clicked();
 
-    void on_pushButton_10_clicked();
+    void on_pushButtonGiaoDienChinhSuaDon_clicked();
 
-    void on_pushButton_11_clicked();
+    void on_pushButtonXacNhanXoaDon_clicked();
+
+    void on_pushButtonXacNhanChonDonChinhSua_clicked();
+
+    void on_pushButtonXacNhanThemDon_2_clicked();
 
 private:
     Ui::MainWindow *ui;

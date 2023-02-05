@@ -45,17 +45,18 @@ class ShippingForm {
 		int sent_date;
 		int received_date;
 
-		int revenue;
-		bool isSucceeded;
+		Price price;
 
 		ShippingForm();
 		~ShippingForm();
+		bool isSucceeded();
 		virtual int getType() = 0;
 		virtual std::string getTypeString() = 0;
 		void inputGeneralInfo(std::ifstream& filein);
 		virtual void inputDetailInfo(std::ifstream& filein) = 0;
+		void inputPriceInfo(std::ifstream& filein);
 
-		virtual double getShippingPrice(Price money = current_price) = 0;
+		virtual double getShippingPrice() = 0;
 };
 
 class DocumentShippingForm : public ShippingForm {
@@ -66,7 +67,7 @@ class DocumentShippingForm : public ShippingForm {
 		int getType();
 		std::string getTypeString();
 		void setDetailInfo(double distance);
-		double getShippingPrice(Price money = current_price);
+		double getShippingPrice();
 		void inputDetailInfo(std::ifstream& filein);
 };
 
@@ -79,7 +80,7 @@ class PackageShippingForm : public ShippingForm {
 		int getType();
 		std::string getTypeString();
 		void setDetailInfo(double distance, double weight);
-		double getShippingPrice(Price money = current_price); 
+		double getShippingPrice(); 
 		void inputDetailInfo(std::ifstream &filein);
 };
 

@@ -14,10 +14,14 @@ FormManagementSystemInit::FormManagementSystemInit(ShippingFormList& pList, std:
 }
 
 void FormManagementSystemInit::init() {
-    if(!isFileExist(form_info_file))
-        creatNewFile(form_info_file);
-    if(!isFileExist(price_info_file));
+    if(!isFileExist(price_info_file)) {
         creatNewFile(price_info_file);
+        *(this->cur_price) = default_price;
+    }
+
+    if(!isFileExist(form_info_file)) {
+        creatNewFile(form_info_file);
+    }
 
     std::ifstream filein;
     filein.open(form_info_file, std::ios_base::in);
@@ -25,5 +29,5 @@ void FormManagementSystemInit::init() {
     pList->inputList(filein);
     filein.close();
 
-    loadInputMoney(*cur_price, price_info_file);
+    loadSavedMoney(*(this->cur_price), price_info_file);
 }

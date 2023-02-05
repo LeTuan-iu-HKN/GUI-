@@ -17,6 +17,6 @@ void removeFile(const char* file_name);
 void printAllFormToFile(ShippingFormList& List);
 
 void printMoneyToFile(Price money);
-void loadInputMoney(Price& money, std::string data_file);
+void loadSavedMoney(Price& money, std::string data_file);
 
 #endif

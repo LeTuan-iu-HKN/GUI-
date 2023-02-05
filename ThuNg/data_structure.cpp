@@ -11,12 +11,15 @@ ShippingForm::ShippingForm() {
 	this->to_address = BLANK_TEXT;
 	this->sent_date = NULL_DATE;
 	this->received_date = NULL_DATE;
-
-	this->isSucceeded = false;
+	this->price = current_price;
 }
 
 ShippingForm::~ShippingForm() {
 	delete this;
+}
+
+bool ShippingForm::isSucceeded() {
+	return !(this->received_date == NULL_DATE);
 }
 
 void ShippingForm::inputGeneralInfo(std::ifstream& filein) {
@@ -29,6 +32,13 @@ void ShippingForm::inputGeneralInfo(std::ifstream& filein) {
 	getline(filein, receiver_name);
 	getline(filein, to_address);
 	filein >> received_date;
+}
+
+void ShippingForm::inputPriceInfo(std::ifstream& filein) {
+	filein >> price.DOC_service;
+	filein >> price.DOC_distance;
+	filein >> price.PAC_weight;
+	filein >> price.PAC_distance;
 }
 
 /////////////////////////////////////
@@ -48,8 +58,8 @@ void DocumentShippingForm::setDetailInfo(double distance) {
 	this->distance = distance;
 }
 
-double DocumentShippingForm::getShippingPrice(Price custom_price) {
-	return (distance * custom_price.DOC_distance + custom_price.DOC_service);
+double DocumentShippingForm::getShippingPrice() {
+	return (distance * price.DOC_distance + price.DOC_service);
 }
 
 void DocumentShippingForm::inputDetailInfo(std::ifstream& filein) {
@@ -74,8 +84,8 @@ void PackageShippingForm::setDetailInfo(double distance, double weight) {
 	this->weight = weight;
 }
 
-double PackageShippingForm::getShippingPrice(Price custom_price) {
-	return (distance * custom_price.PAC_distance + weight * custom_price.PAC_weight);
+double PackageShippingForm::getShippingPrice() {
+	return (distance * price.PAC_distance + weight * price.PAC_weight);
 }
 
 void PackageShippingForm::inputDetailInfo(std::ifstream& filein) {
@@ -110,6 +120,7 @@ void ShippingFormList::inputList(std::ifstream& filein) {
 
 		Form->inputGeneralInfo(filein);
 		Form->inputDetailInfo(filein);
+		Form->inputPriceInfo(filein);
 		this->FormList.push_back(Form);
 	}
 }

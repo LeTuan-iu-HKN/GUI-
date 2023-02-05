@@ -26,8 +26,13 @@ void saveInputInfor(ShippingForm*& Form, std::ofstream& fileout) {
 	}
 	else if (Form->getType() == PACKAGE) {
 		fileout << ((PackageShippingForm*)Form)->distance << "\n";
-		fileout << ((PackageShippingForm*)Form)->weight;
+		fileout << ((PackageShippingForm*)Form)->weight << "\n";
 	}
+
+	fileout << Form->price.DOC_service << "\n";
+	fileout << Form->price.DOC_distance << "\n";
+	fileout << Form->price.PAC_weight << "\n";
+	fileout << Form->price.DOC_distance;
 }
 
 void creatNewFile(std::string file_name) {
@@ -80,7 +85,7 @@ void printMoneyToFile(Price money) {
 	fileout.close();
 }
 
-void loadInputMoney(Price& money, std::string data_file) {
+void loadSavedMoney(Price& money, std::string data_file) {
 	std::ifstream filein;
 	filein.open(data_file, std::ios_base::in);
 	filein >> money.DOC_service;
