@@ -44,6 +44,10 @@ std::string DocumentShippingForm::getTypeString() {
     return std::string("Tài liệu");
 }
 
+void DocumentShippingForm::setDetailInfo(double distance) {
+	this->distance = distance;
+}
+
 double DocumentShippingForm::getShippingPrice(Price custom_price) {
 	return (distance * custom_price.DOC_distance + custom_price.DOC_service);
 }
@@ -63,6 +67,11 @@ int PackageShippingForm::getType() {
 
 std::string PackageShippingForm::getTypeString() {
     return std::string("Bưu kiện");
+}
+
+void PackageShippingForm::setDetailInfo(double distance, double weight) {
+	this->distance = distance;
+	this->weight = weight;
 }
 
 double PackageShippingForm::getShippingPrice(Price custom_price) {

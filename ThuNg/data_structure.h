@@ -63,10 +63,11 @@ class DocumentShippingForm : public ShippingForm {
 		double distance;
 
 		~DocumentShippingForm();
-		virtual int getType();
-		virtual std::string getTypeString();
-		virtual double getShippingPrice(Price money = current_price);
-		virtual void inputDetailInfo(std::ifstream& filein);
+		int getType();
+		std::string getTypeString();
+		void setDetailInfo(double distance);
+		double getShippingPrice(Price money = current_price);
+		void inputDetailInfo(std::ifstream& filein);
 };
 
 class PackageShippingForm : public ShippingForm {
@@ -75,10 +76,11 @@ class PackageShippingForm : public ShippingForm {
 		double weight;
 
 		~PackageShippingForm();
-		virtual int getType();
-		virtual std::string getTypeString();
-		virtual double getShippingPrice(Price money = current_price); 
-		virtual void inputDetailInfo(std::ifstream &filein);
+		int getType();
+		std::string getTypeString();
+		void setDetailInfo(double distance, double weight);
+		double getShippingPrice(Price money = current_price); 
+		void inputDetailInfo(std::ifstream &filein);
 };
 
 

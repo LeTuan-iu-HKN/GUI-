@@ -5,6 +5,7 @@
 #include "data_structure.h"
 #include "program_object.h"
 #include "backend.h"
+#include "file.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

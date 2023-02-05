@@ -133,45 +133,71 @@ void MainWindow::displayFormTable(int row, ShippingForm* Form) {
 
 void MainWindow::on_pushButton_clicked()
 {
-    if(ui->textEditTenNguoiGui->toPlainText().isEmpty() || ui->textEditTenNguoiNhan->toPlainText().isEmpty() || ui->textEditDiaChiGui->toPlainText().isEmpty() || ui->textEditDiaChiNhan->toPlainText().isEmpty() || ui->textEditDiaChiGui->toPlainText().isEmpty() || (!(ui->radioButtonTaiLieu->isChecked()) && !(ui->radioButton_2->isChecked())) || ui->textEditQuangDuong->toPlainText().isEmpty() ) {
+    if(ui->textEditTenNguoiGui->toPlainText().isEmpty() || ui->textEditTenNguoiNhan->toPlainText().isEmpty() || ui->textEditDiaChiGui->toPlainText().isEmpty() || ui->textEditDiaChiNhan->toPlainText().isEmpty() || ui->textEditDiaChiGui->toPlainText().isEmpty() || (!(ui->radioButtonTaiLieu->isChecked()) && !(ui->radioButton_2->isChecked())) || ui->doubleSpinBoxQuangDuong->cleanText().isEmpty()) {
         QMessageBox::critical(this, "Con gà", "Nhập đủ vào con gà");
     } else {
     ui->stackedWidget->setCurrentIndex(2);
-    themData test;
-    test.tenNguoiGui = ui->textEditTenNguoiGui->toPlainText().toStdString();
-    test.tenNguoiNhan = ui->textEditTenNguoiNhan->toPlainText().toStdString();
-    test.DiaChiGui = ui->textEditDiaChiGui->toPlainText().toStdString();
-    test.DiaChiNhan = ui->textEditDiaChiNhan->toPlainText().toStdString();
-    test.NgayThangNamGui = ui->dateEditNgayGui->date().toString("yyyyMMdd").toInt();
-    test.TaiLieuHayBuuKien = ui->radioButtonTaiLieu->isChecked();//1 la tai lieu 0 la buu kien
-    test.DenChua = ui->checkBoxDenChua->isTristate();//1 la roi 0 la chua
-    test.NgayThangNamNhan = ui->dateEditNgayNhan->date().toString("yyyyMMdd").toInt();
-    test.quangDuong = ui->textEditQuangDuong->toPlainText().toDouble();
+    ShippingForm* Form;
+    int type = ui->radioButtonTaiLieu->isChecked();//1 la tai lieu 0 la buu kien
 
-    ui->labelID->setText(QString::fromStdString(std::to_string(test.ID)));
-    ui->labelTenNguoiGui->setText(test.tenNguoiGui.c_str());
-    ui->labelTenNguoiNhan->setText(test.tenNguoiNhan.c_str());
-    ui->labelDiaChiGui->setText(test.DiaChiGui.c_str());
-    ui->labelDiaChiNhan->setText(test.DiaChiNhan.c_str());
-    ui->labelQuangDuong->setText(QString::fromStdString(std::to_string(test.quangDuong)));
+    if(type == 1) type = DOCUMENT;
+    else type = PACKAGE;
 
-    if(test.TaiLieuHayBuuKien)
-        {
-            ui->labelTaiLieuHayBuuKien->setText("Tai lieu");
-        }else
-        {
-        ui->labelTaiLieuHayBuuKien->setText("Buu Kien");
-        }
+    if(type == DOCUMENT) Form = new DocumentShippingForm;
+    else Form = new PackageShippingForm;
 
-    ui->labelNgayThangNamGui->setText(QString::fromStdString(std::to_string(test.NgayThangNamGui)));//
+    Form->sender_name = ui->textEditTenNguoiGui->toPlainText().toStdString();
+    Form->receiver_name = ui->textEditTenNguoiNhan->toPlainText().toStdString();
+    Form->from_address = ui->textEditDiaChiGui->toPlainText().toStdString();
+    Form->to_address = ui->textEditDiaChiNhan->toPlainText().toStdString();
+    Form->sent_date = ui->dateEditNgayGui->date().toString("yyyyMMdd").toInt();
+    Form->isSucceeded = ui->checkBoxDenChua->isTristate();//1 la roi 0 la chua
+    Form->received_date = ui->dateEditNgayNhan->date().toString("yyyyMMdd").toInt();
 
-    if(test.DenChua)
-        {
-            ui->labelNgayThangNamNhan->setText(QString::fromStdString(std::to_string(test.NgayThangNamNhan)));//
-        }else
-        {
-        ui->labelNgayThangNamNhan->setText("Chua den");
-        }
+    if(type == DOCUMENT) {
+        ((DocumentShippingForm*) Form)->setDetailInfo(ui->doubleSpinBoxQuangDuong->value());
+    }
+    else if(type == PACKAGE) {
+        ((PackageShippingForm*) Form)->setDetailInfo(ui->doubleSpinBoxQuangDuong->value(), ui->doubleSpinBoxCanNang->value());
+    }
+    
+    if (List.FormList.size() > 0) {
+        std::ofstream fileout;
+        fileout.open(INFOR_FILE, std::ios::app);
+        fileout << "\n";
+        fileout.close();
+    }
+
+    List.addForm(Form);
+    std::ofstream fileout;
+    fileout.open(INFOR_FILE, std::ios::app);
+    saveInputInfor(Form, fileout);
+    fileout.close();
+
+//     ui->labelID->setText(QString::fromStdString(std::to_string(test.ID)));
+//     ui->labelTenNguoiGui->setText(test.tenNguoiGui.c_str());
+//     ui->labelTenNguoiNhan->setText(test.tenNguoiNhan.c_str());
+//     ui->labelDiaChiGui->setText(test.DiaChiGui.c_str());
+//     ui->labelDiaChiNhan->setText(test.DiaChiNhan.c_str());
+//     ui->labelQuangDuong->setText(QString::fromStdString(std::to_string(test.quangDuong)));
+
+    // if(test.TaiLieuHayBuuKien)
+    //     {
+    //         ui->labelTaiLieuHayBuuKien->setText("Tai lieu");
+    //     }else
+    //     {
+    //     ui->labelTaiLieuHayBuuKien->setText("Buu Kien");
+    //     }
+
+    // ui->labelNgayThangNamGui->setText(QString::fromStdString(std::to_string(test.NgayThangNamGui)));//
+
+    // if(test.DenChua)
+    //     {
+    //         ui->labelNgayThangNamNhan->setText(QString::fromStdString(std::to_string(test.NgayThangNamNhan)));//
+    //     }else
+    //     {
+    //     ui->labelNgayThangNamNhan->setText("Chua den");
+    //     }
 }
 }
 

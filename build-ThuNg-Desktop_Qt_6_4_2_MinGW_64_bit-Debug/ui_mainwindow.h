@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QDateEdit>
+#include <QtWidgets/QDoubleSpinBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
@@ -52,8 +53,6 @@ public:
     QRadioButton *radioButton_2;
     QTextEdit *textEditDiaChiNhan;
     QLabel *label_5;
-    QTextEdit *textEditQuangDuong;
-    QTextEdit *textEdit_7;
     QLabel *label_8;
     QPushButton *pushButton_23;
     QPushButton *pushButton;
@@ -63,6 +62,8 @@ public:
     QLabel *label_26;
     QTextEdit *textEditTenNguoiNhan;
     QDateEdit *dateEditNgayNhan;
+    QDoubleSpinBox *doubleSpinBoxQuangDuong;
+    QDoubleSpinBox *doubleSpinBoxCanNang;
     QWidget *ThemThanhCong3;
     QLabel *label0_3;
     QLabel *label0_4;
@@ -147,7 +148,7 @@ public:
         centralwidget->setObjectName("centralwidget");
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName("stackedWidget");
-        stackedWidget->setGeometry(QRect(10, 0, 871, 531));
+        stackedWidget->setGeometry(QRect(10, 30, 871, 531));
         QFont font;
         font.setPointSize(16);
         stackedWidget->setFont(font);
@@ -249,14 +250,6 @@ public:
         label_5->setObjectName("label_5");
         label_5->setGeometry(QRect(680, 210, 138, 28));
         label_5->setFont(font4);
-        textEditQuangDuong = new QTextEdit(Them1);
-        textEditQuangDuong->setObjectName("textEditQuangDuong");
-        textEditQuangDuong->setGeometry(QRect(670, 250, 161, 41));
-        textEditQuangDuong->setFont(font5);
-        textEdit_7 = new QTextEdit(Them1);
-        textEdit_7->setObjectName("textEdit_7");
-        textEdit_7->setGeometry(QRect(300, 340, 161, 41));
-        textEdit_7->setFont(font5);
         label_8 = new QLabel(Them1);
         label_8->setObjectName("label_8");
         label_8->setGeometry(QRect(480, 350, 52, 28));
@@ -298,6 +291,12 @@ public:
         dateEditNgayNhan->setObjectName("dateEditNgayNhan");
         dateEditNgayNhan->setGeometry(QRect(720, 410, 111, 31));
         dateEditNgayNhan->setFont(font7);
+        doubleSpinBoxQuangDuong = new QDoubleSpinBox(Them1);
+        doubleSpinBoxQuangDuong->setObjectName("doubleSpinBoxQuangDuong");
+        doubleSpinBoxQuangDuong->setGeometry(QRect(670, 250, 161, 41));
+        doubleSpinBoxCanNang = new QDoubleSpinBox(Them1);
+        doubleSpinBoxCanNang->setObjectName("doubleSpinBoxCanNang");
+        doubleSpinBoxCanNang->setGeometry(QRect(300, 340, 161, 41));
         stackedWidget->addWidget(Them1);
         ThemThanhCong3 = new QWidget();
         ThemThanhCong3->setObjectName("ThemThanhCong3");
@@ -682,7 +681,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(6);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
