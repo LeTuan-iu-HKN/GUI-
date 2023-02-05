@@ -1,13 +1,4 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include <string>
-#include <QDateTimeEdit>
-#include <QMessageBox>
-#include <QTableWidgetItem>
-#include <QTableWidget>
-#include <fstream>
-#include <vector>
-#include "data_structure.h"
 
 
 MainWindow::MainWindow(QWidget* parent)

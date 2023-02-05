@@ -1,12 +1,20 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
-#include <QTableWidget>
+#include "ui_mainwindow.h"
 #include "data_structure.h"
 #include "program_object.h"
 #include "backend.h"
 #include "file.h"
+
+#include <QDateTimeEdit>
+#include <QMessageBox>
+#include <QTableWidgetItem>
+#include <QTableWidget>
+#include <QMainWindow>
+#include <fstream>
+#include <vector>
+#include <string>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
