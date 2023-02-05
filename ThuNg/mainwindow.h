@@ -30,75 +30,107 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    //Page Them don
+    //Page Them
     //Tran Quang Huy
     bool isThemDonEmpty();
 
-    //Page sua don
+    //PageSuadon
     //Tran Quang Huy
     bool isSuaDonEmpty();
 
-    //Page Xoa don
+    //Page Chinh sua don
     //Tran Quang Huy
     void refreshFormTable(QTableWidget*& table);
     //Tran Quang Huy
     void displayFormTable(int row, ShippingForm* Form, QTableWidget*& table);
 
 private slots:
+
+    //PageTimKiem
+    //Nguyen Le Tuan
+    void on_pushButtonTimDC_clicked();
+    //Nguyen Le Tuan
+    void on_pushButtonVeGDCPageTimDC_clicked();
+    //Nguyen Le Tuan
+    void on_pushButtonXacNhanDiaChi_clicked();
+
     // Page Them
+    //Nguyen Le Tuan
+    void on_pushButtonThem_clicked();
     //Tran Quang Huy
     void on_pushButtonXacNhanThemDon_clicked();
-    //Nguyen Le Tuan
-    void on_pushButton_2_clicked();
-    //Nguyen Le Tuan
-    void on_pushButton_23_clicked();
-    //Nguyen Le Tuan
-    void on_pushButton_3_clicked();
-    //Nguyen Le Tuan
-    void on_pushButton_4_clicked();
-    //Nguyen Le Tuan
-    void on_pushButton_20_clicked();
-    //Nguyen Le Tuan
-    void on_pushButton_22_clicked();
-    //Nguyen Le Tuan
-    void on_pushButton_21_clicked();
-    //Nguyen Le Tuan
-    void on_pushButton_24_clicked();
-    //Nguyen Le Tuan
-    void on_pushButton_25_clicked();
-
     //Tran Quang Huy
-    void on_pushButtonThongKe_clicked();
-    //Nguyen Le Tuan
-    void on_pushButton_26_clicked();
-    //Nguyen Le Tuan
-    void on_pushButton_28_clicked();
-    //Nguyen Le Tuan
-    void on_pushButton_27_clicked();
+    void on_pushButtonVeGDCThem_clicked();
 
-
+    //PageThemThanhCong
     //Nguyen Le Tuan
-    void on_pushButton_18_clicked();
+    void on_pushButtonVeGDCPageThemThanhCong_clicked();
 
+    // Page Xoa don
+    //Tran Quang Huy
+    void on_pushButtonGiaoDienXoaDon_clicked();
+    //Tran Quang Huy
+    void on_pushButtonXacNhanXoaDon_clicked();
+    //Nguyen Le Tuan
+    void on_pushButtonVeGDCPageXoa_clicked();
+
+    //Page Chinh sua don
+    //Tran Quang Huy
+    void on_pushButtonGiaoDienChinhSuaDon_clicked();
+    //Tran Quang Huy
+    void on_pushButtonXacNhanChonDonChinhSua_clicked();
+    //Nguyen Le Tuan
+    void on_pushButtonVeGDCPageDieuChinh_clicked();
+    //Nguyen Le Tuan
+    void on_pushButtonVeGDCPageDieuChinh_2_clicked();
+    //Nguyen Le Tuan
+    void on_pushButtonXacNhanThemDon_2_clicked();
+
+    //PageCapNhatGia
+    //Nguyen Le Tuan
+    void on_pushButtonVeGDCPageCapNhatGia_clicked();
     //Tran Quang Huy
     void on_pushButtonCapNhatGia_clicked();
     //Tran Quang Huy
     void on_pushButtonDatVeMacDinh_clicked();
+    //Nguyen Le Tuan
+    void on_pushButtonCapNhatGia_2_clicked();
+
+
+    //PageThongKe
     //Tran Quang Huy
     void on_pushButtonXacNhanThongKeTheoThoiGian_clicked();
-
+    //Tran Quang Huy
+    void on_pushButtonThongKe_clicked();
     //Nguyen Le Tuan
-    void on_pushButton_7_clicked();
-    //Tran Quang Huy
-    void on_pushButtonGiaoDienXoaDon_clicked();
-    //Tran Quang Huy
-    void on_pushButtonGiaoDienChinhSuaDon_clicked();
-    //Tran Quang Huy
-    void on_pushButtonXacNhanXoaDon_clicked();
-    //Tran Quang Huy
-    void on_pushButtonXacNhanChonDonChinhSua_clicked();
-    //Tran Quang Huy
-    void on_pushButtonXacNhanThemDon_2_clicked();
+    void on_pushButtonVeGDCPageThongKe_clicked();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 private:
     Ui::MainWindow *ui;

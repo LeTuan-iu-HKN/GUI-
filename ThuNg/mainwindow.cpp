@@ -7,83 +7,16 @@ MainWindow::MainWindow(QWidget* parent)
     ui->setupUi(this);
 }
 
-void MainWindow::on_pushButton_2_clicked() {
-    ui->stackedWidget->setCurrentIndex(1);
-}
-
-
-void MainWindow::on_pushButton_23_clicked() {
-    ui->stackedWidget->setCurrentIndex(0);
-}
-
-
-void MainWindow::on_pushButton_3_clicked() {
-    ui->stackedWidget->setCurrentIndex(3);
-    ui->labelGiaNhanDonTaiLieu->setText(QString::number(current_price.DOC_service));
-    ui->labelGiaQuangDuongTaiLieu->setText(QString::number(current_price.DOC_distance));
-    ui->labelGiaCanNangBuuKien->setText(QString::number(current_price.PAC_weight));
-    ui->labelGiaQuangDuongBuuKien->setText(QString::number(current_price.PAC_distance));
-}
-
-//PageTimKiem
-void MainWindow::on_pushButton_4_clicked() {
-    ui->stackedWidget->setCurrentIndex(6);
-    ui->tableWidgetDSDiaChi->setRowCount(10);
-    ui->tableWidgetDSDiaChi->setColumnCount(8);
-
-}
-
-
-void MainWindow::on_pushButton_20_clicked() {
-    ui->stackedWidget->setCurrentIndex(0);
-}
-
-
-void MainWindow::on_pushButton_22_clicked() {
-    ui->stackedWidget->setCurrentIndex(0);
-}
-
-
-void MainWindow::on_pushButton_21_clicked() {
-    ui->stackedWidget->setCurrentIndex(0);
-}
-
-
-void MainWindow::on_pushButton_24_clicked() {
-    ui->stackedWidget->setCurrentIndex(0);
-}
-
-
-void MainWindow::on_pushButton_25_clicked() {
-    ui->stackedWidget->setCurrentIndex(0);
-}
-
-
-void MainWindow::on_pushButton_26_clicked() {
-    ui->stackedWidget->setCurrentIndex(0);
-}
-
-
-void MainWindow::on_pushButton_28_clicked() {
-    ui->stackedWidget->setCurrentIndex(6);
-}
-
-
-void MainWindow::on_pushButton_27_clicked() {
-    ui->stackedWidget->setCurrentIndex(0);
-}
-
-
 MainWindow::~MainWindow() {
     delete ui;
 }
 
+//Nguyen Le Tuan + Tran Quang Huy
 void MainWindow::displayFormTable(int row, ShippingForm* Form, QTableWidget*& table) {
     table->setRowCount(row + 1);
     QTableWidgetItem* item[8];
     for (int i = 0; i < 8; i++)
-        item[i] = new QTableWidgetItem;
-
+    item[i] = new QTableWidgetItem;
     item[0]->setText(QString::fromStdString(Form->sender_name)); table->setItem(row, 0, item[0]);
     item[1]->setText(QString::fromStdString(Form->from_address)); table->setItem(row, 1, item[1]);
     item[2]->setText(QString::fromStdString(Form->receiver_name)); table->setItem(row, 2, item[2]);
@@ -94,7 +27,43 @@ void MainWindow::displayFormTable(int row, ShippingForm* Form, QTableWidget*& ta
     item[7]->setText(QString::number(Form->getRevenue())); table->setItem(row, 7, item[7]);
 }
 
+//PageTimKiem
+//Nguyen Le Tuan
+void MainWindow::on_pushButtonVeGDCPageTimDC_clicked()
+{
+   ui->stackedWidget->setCurrentIndex(0);
+}
+
+//Nguyen Le Tuan
+void MainWindow::on_pushButtonTimDC_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(6);
+    ui->tableWidgetDSDiaChi->setRowCount(10);
+    ui->tableWidgetDSDiaChi->setColumnCount(8);
+}
+
+//Nguyen Le Tuan + Tran Quang Huy
+void MainWindow::on_pushButtonXacNhanDiaChi_clicked()
+{
+    std::vector<int> index = searchIndexFormList(List, ui->textSearch->toPlainText().toStdString());
+    for (int i = 0; i < (int)index.size(); i++) {
+        displayFormTable(i, List.FormList[index[i]], ui->tableWidgetDSDiaChi);
+    }
+}
+
 //Page Them
+//Nguyen Le Tuan
+void MainWindow::on_pushButtonVeGDCThem_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+//Nguyen Le Tuan
+void MainWindow::on_pushButtonThem_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+//Tran Quang Huy
 bool MainWindow::isThemDonEmpty() {
     return (
         ui->textEditTenNguoiGui->toPlainText().isEmpty() ||
@@ -109,9 +78,11 @@ bool MainWindow::isThemDonEmpty() {
 
 void MainWindow::on_pushButtonXacNhanThemDon_clicked() {
     if (isThemDonEmpty()) {
+        //Nguyen Le Tuan
         QMessageBox::critical(this, "Thiếu thông tin", "Vui lòng nhập đầy đủ thông tin");
     }
     else {
+        //Nguyen Le Tuan + Tran Quang Huy
         ui->stackedWidget->setCurrentIndex(2);
         ShippingForm* Form;
         int type = ui->radioButtonTaiLieu->isChecked(); //1 la tai lieu 0 la buu kien
@@ -145,6 +116,7 @@ void MainWindow::on_pushButtonXacNhanThemDon_clicked() {
 
         List.addForm(Form);
 
+        //Tran Quang Huy
         std::ofstream fileout;
         fileout.open(INFOR_FILE, std::ios::app);
         saveInputInfor(Form, fileout);
@@ -174,82 +146,82 @@ void MainWindow::on_pushButtonXacNhanThemDon_clicked() {
     }
 }
 
-
 //Page ThemThanhCong
-
-void MainWindow::on_pushButton_18_clicked() {
-    ui->stackedWidget->setCurrentIndex(1);
-
+//Nguyen Le Tuan
+void MainWindow::on_pushButtonVeGDCPageThemThanhCong_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
 }
 
-//PageCapNhatGia
-
-void MainWindow::on_pushButtonCapNhatGia_clicked() {
-    if (!(ui->checkBoxTaiLieu->isChecked()) && !(ui->checkBoxBuuKien->isChecked())) {
-        QMessageBox::critical(this, "Thiếu thông tin", "Vui lòng chọn ít nhất 1 trong 2 ô Tài liệu hoặc Bưu kiện!");
-    }
-    else {
-        if (ui->checkBoxTaiLieu->isChecked()) {
-            current_price.DOC_service = ui->textEditGiaNhanDonTaiLieu->toPlainText().toUInt();
-            current_price.DOC_distance = ui->textEditGiaQuangDuongTaiLieu->toPlainText().toUInt();
-            ui->labelGiaNhanDonTaiLieu->setText(QString::number(current_price.DOC_service));
-            ui->labelGiaQuangDuongTaiLieu->setText(QString::number(current_price.DOC_distance));
-        }
-        if (ui->checkBoxBuuKien->isChecked()) {
-            current_price.PAC_weight = ui->textEditGiaCanNangBuuKien->toPlainText().toUInt();
-            current_price.PAC_distance = ui->textEditGiaQuangDuongBuuKien->toPlainText().toUInt();
-            ui->labelGiaCanNangBuuKien->setText(QString::number(current_price.PAC_weight));
-            ui->labelGiaQuangDuongBuuKien->setText(QString::number(current_price.PAC_distance));
-        }
-
-        printMoneyToFile(current_price);
-    }
+// Page Xoa don
+//Nguyen Le Tuan
+void MainWindow::on_pushButtonVeGDCPageXoa_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
 }
 
-void MainWindow::on_pushButtonDatVeMacDinh_clicked() {
-    ui->labelGiaNhanDonTaiLieu->setText(QString::number(default_price.DOC_service));
-    ui->labelGiaQuangDuongTaiLieu->setText(QString::number(default_price.DOC_distance));
-    ui->labelGiaCanNangBuuKien->setText(QString::number(default_price.PAC_weight));
-    ui->labelGiaQuangDuongBuuKien->setText(QString::number(default_price.PAC_distance));
-
-    current_price = default_price;
-    printMoneyToFile(current_price);
+//Tran Quang Huy
+void MainWindow::refreshFormTable(QTableWidget*& table) {
+    for (int i = 0; i < (int)List.FormList.size(); i++)
+        displayFormTable(i, List.FormList[i], table);
 }
 
-
-//PageTimKiem
-
-
-void MainWindow::on_pushButton_7_clicked() {
-    std::vector<int> index = searchIndexFormList(List, ui->textSearch->toPlainText().toStdString());
-    for (int i = 0; i < (int)index.size(); i++) {
-        displayFormTable(i, List.FormList[index[i]], ui->tableWidgetDSDiaChi);
-    }
+//Nguyen Le Tuan
+void MainWindow::on_pushButtonGiaoDienXoaDon_clicked() {
+    ui->stackedWidget->setCurrentIndex(7);
+    ui->tableWidgetDSToanBoDonHang->setRowCount(10);
+    ui->tableWidgetDSToanBoDonHang->setColumnCount(8);
+    refreshFormTable(ui->tableWidgetDSToanBoDonHang);
 }
 
+//Tran Quang Huy
+void MainWindow::on_pushButtonXacNhanXoaDon_clicked() {
+    int index = ui->spinBoxSTTCanXoa->value() - 1; //index = STT - 1
+    List.removeForm(index);
+    refreshFormTable(ui->tableWidgetDSToanBoDonHang);
+    printAllFormToFile(List);
+}
 
 //Page Chinh sua don
+//Nguyen Le Tuan
+void MainWindow::on_pushButtonVeGDCPageDieuChinh_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+//Nguyen Le Tuan
+void MainWindow::on_pushButtonVeGDCPageDieuChinh_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+//Nguyen Le Tuan
 void MainWindow::on_pushButtonGiaoDienChinhSuaDon_clicked() {
     ui->stackedWidget->setCurrentIndex(5);
+    ui->tableWidgetDSToanBoDonHangGiaoDienChinhSua->setRowCount(10);
+    ui->tableWidgetDSToanBoDonHangGiaoDienChinhSua->setColumnCount(8);
     refreshFormTable(ui->tableWidgetDSToanBoDonHangGiaoDienChinhSua);
 }
 
+//Nguyen Le Tuan
 void MainWindow::on_pushButtonXacNhanChonDonChinhSua_clicked() {
     ui->stackedWidget->setCurrentIndex(8);
 }
 
+//Tran Quang Huy
 bool MainWindow::isSuaDonEmpty() {
     return (
-        ui->textEditTenNguoiGui_2->toPlainText().isEmpty() ||
-        ui->textEditTenNguoiNhan_2->toPlainText().isEmpty() ||
-        ui->textEditDiaChiGui_2->toPlainText().isEmpty() ||
-        ui->textEditDiaChiNhan_2->toPlainText().isEmpty() ||
-        (!(ui->radioButtonTaiLieu_2->isChecked()) && !(ui->radioButtonBuuKien_2->isChecked())) ||
-        ui->doubleSpinBoxQuangDuong_2->cleanText().isEmpty() ||
-        (ui->radioButtonBuuKien_2->isChecked() && ui->doubleSpinBoxCanNang_2->cleanText().isEmpty())
-        );
+    ui->textEditTenNguoiGui_2->toPlainText().isEmpty() ||
+    ui->textEditTenNguoiNhan_2->toPlainText().isEmpty() ||
+    ui->textEditDiaChiGui_2->toPlainText().isEmpty() ||
+    ui->textEditDiaChiNhan_2->toPlainText().isEmpty() ||
+    (!(ui->radioButtonTaiLieu_2->isChecked()) && !(ui->radioButtonBuuKien_2->isChecked())) ||
+    ui->doubleSpinBoxQuangDuong_2->cleanText().isEmpty() ||
+    (ui->radioButtonBuuKien_2->isChecked() && ui->doubleSpinBoxCanNang_2->cleanText().isEmpty())
+    );
 }
 
+//Nguyen Le Tuan + Tran Quang Huy
 void MainWindow::on_pushButtonXacNhanThemDon_2_clicked() {
     if (isSuaDonEmpty()) {
         QMessageBox::critical(this, "Thiếu thông tin", "Vui lòng nhập đầy đủ thông tin");
@@ -286,26 +258,63 @@ void MainWindow::on_pushButtonXacNhanThemDon_2_clicked() {
     }
 }
 
-// Page Xoa don
-void MainWindow::refreshFormTable(QTableWidget*& table) {
-    for (int i = 0; i < (int)List.FormList.size(); i++)
-        displayFormTable(i, List.FormList[i], table);
+//PageCapNhatGia
+//Nguyen Le Tuan
+void MainWindow::on_pushButtonVeGDCPageCapNhatGia_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
 }
 
-void MainWindow::on_pushButtonGiaoDienXoaDon_clicked() {
-    ui->stackedWidget->setCurrentIndex(7);
-    refreshFormTable(ui->tableWidgetDSToanBoDonHang);
+//Nguyen Le Tuan
+void MainWindow::on_pushButtonCapNhatGia_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+    ui->labelGiaNhanDonTaiLieu->setText(QString::number(current_price.DOC_service));
+    ui->labelGiaQuangDuongTaiLieu->setText(QString::number(current_price.DOC_distance));
+    ui->labelGiaCanNangBuuKien->setText(QString::number(current_price.PAC_weight));
+    ui->labelGiaQuangDuongBuuKien->setText(QString::number(current_price.PAC_distance));
 }
 
-void MainWindow::on_pushButtonXacNhanXoaDon_clicked() {
-    int index = ui->spinBoxSTTCanXoa->value() - 1; //index = STT - 1
-    List.removeForm(index);
-    refreshFormTable(ui->tableWidgetDSToanBoDonHang);
-    printAllFormToFile(List);
+//Nguyen Le Tuan
+void MainWindow::on_pushButtonCapNhatGia_clicked() {
+    if (!(ui->checkBoxTaiLieu->isChecked()) && !(ui->checkBoxBuuKien->isChecked())) {
+        QMessageBox::critical(this, "Thiếu thông tin", "Vui lòng chọn ít nhất 1 trong 2 ô Tài liệu hoặc Bưu kiện!");
+    }
+    else {
+        if (ui->checkBoxTaiLieu->isChecked()) {
+            current_price.DOC_service = ui->textEditGiaNhanDonTaiLieu->toPlainText().toUInt();
+            current_price.DOC_distance = ui->textEditGiaQuangDuongTaiLieu->toPlainText().toUInt();
+            ui->labelGiaNhanDonTaiLieu->setText(QString::number(current_price.DOC_service));
+            ui->labelGiaQuangDuongTaiLieu->setText(QString::number(current_price.DOC_distance));
+        }
+        if (ui->checkBoxBuuKien->isChecked()) {
+            current_price.PAC_weight = ui->textEditGiaCanNangBuuKien->toPlainText().toUInt();
+            current_price.PAC_distance = ui->textEditGiaQuangDuongBuuKien->toPlainText().toUInt();
+            ui->labelGiaCanNangBuuKien->setText(QString::number(current_price.PAC_weight));
+            ui->labelGiaQuangDuongBuuKien->setText(QString::number(current_price.PAC_distance));
+        }
+        printMoneyToFile(current_price);
+    }
 }
 
+//Tran Quang Huy
+void MainWindow::on_pushButtonDatVeMacDinh_clicked() {
+    ui->labelGiaNhanDonTaiLieu->setText(QString::number(default_price.DOC_service));
+    ui->labelGiaQuangDuongTaiLieu->setText(QString::number(default_price.DOC_distance));
+    ui->labelGiaCanNangBuuKien->setText(QString::number(default_price.PAC_weight));
+    ui->labelGiaQuangDuongBuuKien->setText(QString::number(default_price.PAC_distance));
+    current_price = default_price;
+    printMoneyToFile(current_price);
+}
 
 //Page Thong ke
+//Nguyen Le Tuan
+void MainWindow::on_pushButtonVeGDCPageThongKe_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+//Nguyen Le Tuan
 void MainWindow::on_pushButtonXacNhanThongKeTheoThoiGian_clicked() {
     double revenue = 0;
     int start_date = ui->dateEdit->date().toString("yyyyMMdd").toInt();
@@ -319,12 +328,44 @@ void MainWindow::on_pushButtonXacNhanThongKeTheoThoiGian_clicked() {
     ui->label_6->setText(QString::number(revenue));
 }
 
+//Nguyen Le Tuan
 void MainWindow::on_pushButtonThongKe_clicked() {
     ui->stackedWidget->setCurrentIndex(4);
-    ui->tableWidgetDSDoanhThu->setRowCount(0);
+    ui->tableWidgetDSDoanhThu->setRowCount(5);
     ui->tableWidgetDSDoanhThu->setColumnCount(8);
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
