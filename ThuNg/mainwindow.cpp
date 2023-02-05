@@ -77,7 +77,7 @@ void MainWindow::on_pushButton_24_clicked()
 
 void MainWindow::on_pushButton_25_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(4);
+    ui->stackedWidget->setCurrentIndex(0);
 }
 
 
@@ -114,7 +114,7 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::displayFormTable(int row, ShippingForm* Form, QTableWidget*& table) {
-    ui->tableWidgetDSDiaChi->setRowCount(row + 1);
+    table->setRowCount(row + 1);
     QTableWidgetItem* item[8];
     for(int i = 0; i < 8; i++)
            item[i] = new QTableWidgetItem;
@@ -183,23 +183,23 @@ void MainWindow::on_pushButton_clicked()
         ui->labelQuangDuong->setText(QString::number(((DocumentShippingForm*)Form)->distance));
     }
 
-    // if(test.TaiLieuHayBuuKien)
-    //     {
-    //         ui->labelTaiLieuHayBuuKien->setText("Tai lieu");
-    //     }else
-    //     {
-    //     ui->labelTaiLieuHayBuuKien->setText("Buu Kien");
-    //     }
+//    if(test.TaiLieuHayBuuKien)
+//        {
+//            ui->labelTaiLieuHayBuuKien->setText("Tai lieu");
+//        }else
+//        {
+//        ui->labelTaiLieuHayBuuKien->setText("Buu Kien");
+//        }
 
-    // ui->labelNgayThangNamGui->setText(QString::fromStdString(std::to_string(test.NgayThangNamGui)));//
+//    ui->labelNgayThangNamGui->setText(QString::fromStdString(std::to_string(test.NgayThangNamGui)));//
 
-    // if(test.DenChua)
-    //     {
-    //         ui->labelNgayThangNamNhan->setText(QString::fromStdString(std::to_string(test.NgayThangNamNhan)));//
-    //     }else
-    //     {
-    //     ui->labelNgayThangNamNhan->setText("Chua den");
-    //     }
+//    if(test.DenChua)
+//        {
+//            ui->labelNgayThangNamNhan->setText(QString::fromStdString(std::to_string(test.NgayThangNamNhan)));//
+//        }else
+//        {
+//        ui->labelNgayThangNamNhan->setText("Chua den");
+//        }
 }
 }
 
@@ -230,7 +230,7 @@ void MainWindow::on_pushButton_15_clicked()
 
 }
     if(!(ui->checkBox_6->isChecked()) && !(ui->checkBox_5->isChecked())) {
-    QMessageBox::critical(this, "LỖI RỒI ĐÓ NHA", "CLICK chọn 1 trong 2 ô để chúng mình cùng chạy nhé!");
+    QMessageBox::critical(this, "LỖI RỒI ĐÓ NHA CON GÀ!", "CLICK chọn 1 trong 2 ô để chúng mình cùng chạy nhé!");
 }
 }
 
@@ -250,10 +250,16 @@ void MainWindow::on_pushButton_13_clicked()
 //PageDoanhThu
 void MainWindow::on_pushButton_6_clicked()
 {
+    int sum = 0;
     DT r;
     r.NgayThangNamBD =  ui->dateEdit->date().toString("yyyyMMdd").toInt();
     r.NgayThangNamKT =  ui->dateEdit_2->date().toString("yyyyMMdd").toInt();
-    ui->label_6->setText(QString::fromStdString(std::to_string(r.doanhThu)));
+    std::vector<int> index = searchDateIndexFormList(List, r.NgayThangNamBD, r.NgayThangNamKT);
+    for(int i = 0; i < (int) index.size(); i++) {
+        displayFormTable(i, List.FormList[index[i]], ui->tableWidgetDSDoanhThu);
+       sum += List.FormList[index[i]]->getShippingPrice();
+    }
+    ui->label_6->setText(QString::number(sum));
 }
 
 //PageTimKiem
@@ -262,12 +268,26 @@ void MainWindow::on_pushButton_6_clicked()
 void MainWindow::on_pushButton_7_clicked()
 {
     std::vector<int> index = searchIndexFormList(List, ui->textSearch->toPlainText().toStdString());
-    QTableWidgetItem* item[(int) index.size()][8];
-    for(int i = 0; i < (int) index.size(); i++)
-        for(int j = 0; j < 8; j++)
-            item[i][j] = new QTableWidgetItem;
-
     for(int i = 0; i < (int) index.size(); i++) {
         displayFormTable(i, List.FormList[index[i]], ui->tableWidgetDSDiaChi);
     }
 }
+
+void MainWindow::on_pushButton_9_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(7);
+}
+
+
+void MainWindow::on_pushButton_10_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
+}
+
+
+void MainWindow::on_pushButton_11_clicked()
+{
+    for(int i = 0; i < List.FormList.size(); i++)
+        displayFormTable(i, List.FormList[i], ui->tableWidgetDSDiaChi_2);
+}
+

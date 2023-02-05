@@ -62,6 +62,12 @@ private slots:
 
     void on_pushButton_7_clicked();
 
+    void on_pushButton_9_clicked();
+
+    void on_pushButton_10_clicked();
+
+    void on_pushButton_11_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
@@ -84,7 +90,6 @@ struct themData {
 
 //PageDoanhThu
 struct DT {
-    int doanhThu;
     int NgayThangNamBD;
     int NgayThangNamKT;
 };
