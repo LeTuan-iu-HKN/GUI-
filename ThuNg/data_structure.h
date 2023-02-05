@@ -15,8 +15,6 @@
 
 #define STRING_NOT_FOUND std::string::npos
 
-const int MAX_STREAMSIZE = std::numeric_limits<std::streamsize>::max();
-
 enum ParcelType {
 	DOCUMENT = 1, 
 	PACKAGE = 2
@@ -48,7 +46,7 @@ class ShippingForm {
 		Price price;
 
 		ShippingForm();
-		~ShippingForm();
+        virtual ~ShippingForm();
 		bool isSucceeded();
 		virtual int getType() = 0;
 		virtual std::string getTypeString() = 0;

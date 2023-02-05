@@ -6,6 +6,7 @@
 #include "file.h"
 #include "init.h"
 #include "program_object.h"
+#include "backend.h"
 
 #include <iostream>
 #include <string>

@@ -14,12 +14,12 @@ FormManagementSystemInit::FormManagementSystemInit(ShippingFormList& pList, std:
 }
 
 void FormManagementSystemInit::init() {
-    if(!isFileExist(price_info_file)) {
+    if (!isFileExist(price_info_file)) {
         creatNewFile(price_info_file);
         *(this->cur_price) = default_price;
     }
 
-    if(!isFileExist(form_info_file)) {
+    if (!isFileExist(form_info_file)) {
         creatNewFile(form_info_file);
     }
 

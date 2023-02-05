@@ -51,7 +51,7 @@ int DocumentShippingForm::getType() {
 }
 
 std::string DocumentShippingForm::getTypeString() {
-    return std::string("Tài liệu");
+	return std::string("Tài liệu");
 }
 
 void DocumentShippingForm::setDetailInfo(double distance) {
@@ -59,6 +59,7 @@ void DocumentShippingForm::setDetailInfo(double distance) {
 }
 
 double DocumentShippingForm::getShippingPrice() {
+    if(received_date == NULL_DATE) return 0;
 	return (distance * price.DOC_distance + price.DOC_service);
 }
 
@@ -76,7 +77,7 @@ int PackageShippingForm::getType() {
 }
 
 std::string PackageShippingForm::getTypeString() {
-    return std::string("Bưu kiện");
+	return std::string("Bưu kiện");
 }
 
 void PackageShippingForm::setDetailInfo(double distance, double weight) {
@@ -85,6 +86,7 @@ void PackageShippingForm::setDetailInfo(double distance, double weight) {
 }
 
 double PackageShippingForm::getShippingPrice() {
+    if(received_date == NULL_DATE) return 0;
 	return (distance * price.PAC_distance + weight * price.PAC_weight);
 }
 

@@ -272,10 +272,30 @@ release/moc_mainwindow.cpp: ../ThuNg/mainwindow.h \
 		C:/Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		C:/Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QTableWidget \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qtablewidget.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qtableview.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.4.2/mingw_64/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/6.4.2/mingw_64/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qstyleoption.h \
+		C:/Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/6.4.2/mingw_64/include/QtGui/qvalidator.h \
+		C:/Qt/6.4.2/mingw_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qslider.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qstyle.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qtabbar.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qrubberband.h \
 		../ThuNg/data_structure.h \
 		../ThuNg/function.h \
 		../ThuNg/program_object.h \
 		../ThuNg/backend.h \
+		../ThuNg/file.h \
 		release/moc_predefs.h \
 		C:/Qt/6.4.2/mingw_64/bin/moc.exe
 	'C:\Qt\6.4.2\mingw_64\bin\moc.exe' $(DEFINES) --include 'C:/Users/MintCat/Documents/HUST/Learning Materials/20221/C-C++ Programming Language/GUI-/build-ThuNg-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/release/moc_predefs.h' -IC:/Qt/6.4.2/mingw_64/mkspecs/win32-g++ -I'C:/Users/MintCat/Documents/HUST/Learning Materials/20221/C-C++ Programming Language/GUI-/ThuNg' -IC:/Qt/6.4.2/mingw_64/include -IC:/Qt/6.4.2/mingw_64/include/QtWidgets -IC:/Qt/6.4.2/mingw_64/include/QtGui -IC:/Qt/6.4.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ../ThuNg/mainwindow.h -o release/moc_mainwindow.cpp
@@ -464,12 +484,31 @@ release/main.o: ../ThuNg/main.cpp ../ThuNg/mainwindow.h \
 		C:/Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		C:/Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QTableWidget \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qtablewidget.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qtableview.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.4.2/mingw_64/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/6.4.2/mingw_64/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qstyleoption.h \
+		C:/Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/6.4.2/mingw_64/include/QtGui/qvalidator.h \
+		C:/Qt/6.4.2/mingw_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qslider.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qstyle.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qtabbar.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qrubberband.h \
 		../ThuNg/data_structure.h \
 		../ThuNg/function.h \
 		../ThuNg/program_object.h \
 		../ThuNg/backend.h \
-		../ThuNg/library.h \
 		../ThuNg/file.h \
+		../ThuNg/library.h \
 		../ThuNg/init.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QApplication \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qapplication.h \
@@ -492,7 +531,6 @@ release/main.o: ../ThuNg/main.cpp ../ThuNg/mainwindow.h \
 		C:/Qt/6.4.2/mingw_64/include/QtCore/qpromise.h \
 		C:/Qt/6.4.2/mingw_64/include/QtGui/qguiapplication.h \
 		C:/Qt/6.4.2/mingw_64/include/QtGui/qinputmethod.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
 		C:/Qt/6.4.2/mingw_64/include/QtGui/qguiapplication_platform.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/main.o ../ThuNg/main.cpp
 
@@ -634,47 +672,9 @@ release/mainwindow.o: ../ThuNg/mainwindow.cpp ../ThuNg/mainwindow.h \
 		C:/Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		C:/Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h \
-		../ThuNg/data_structure.h \
-		../ThuNg/function.h \
-		../ThuNg/program_object.h \
-		../ThuNg/backend.h \
-		ui_mainwindow.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/QVariant \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QApplication \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qapplication.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qcoreapplication.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qeventloop.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qjnitypes.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qfuture.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qfutureinterface.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qmutex.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qtsan_impl.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qresultstore.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qfuture_impl.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qthreadpool.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qthread.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qdeadlinetimer.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qelapsedtimer.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qrunnable.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qexception.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qpromise.h \
-		C:/Qt/6.4.2/mingw_64/include/QtGui/qguiapplication.h \
-		C:/Qt/6.4.2/mingw_64/include/QtGui/qinputmethod.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
-		C:/Qt/6.4.2/mingw_64/include/QtGui/qguiapplication_platform.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QCheckBox \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qcheckbox.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QDateEdit \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qdatetimeedit.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/6.4.2/mingw_64/include/QtGui/qvalidator.h \
-		C:/Qt/6.4.2/mingw_64/include/QtCore/qregularexpression.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QHeaderView \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qheaderview.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QTableWidget \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qtablewidget.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qtableview.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractitemview.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qframe.h \
@@ -682,42 +682,25 @@ release/mainwindow.o: ../ThuNg/mainwindow.cpp ../ThuNg/mainwindow.h \
 		C:/Qt/6.4.2/mingw_64/include/QtCore/qitemselectionmodel.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qstyleoption.h \
+		C:/Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/6.4.2/mingw_64/include/QtGui/qvalidator.h \
+		C:/Qt/6.4.2/mingw_64/include/QtCore/qregularexpression.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qslider.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qabstractslider.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qstyle.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qtabbar.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qrubberband.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QLabel \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qlabel.h \
-		C:/Qt/6.4.2/mingw_64/include/QtGui/qpicture.h \
-		C:/Qt/6.4.2/mingw_64/include/QtGui/qtextdocument.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QMenuBar \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qmenubar.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qmenu.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QPushButton \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qpushbutton.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QRadioButton \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qradiobutton.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QStackedWidget \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qstackedwidget.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QStatusBar \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qstatusbar.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QTableWidget \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qtablewidget.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qtableview.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QTextEdit \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qtextedit.h \
-		C:/Qt/6.4.2/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.4.2/mingw_64/include/QtGui/qtextcursor.h \
-		C:/Qt/6.4.2/mingw_64/include/QtGui/qtextformat.h \
-		C:/Qt/6.4.2/mingw_64/include/QtGui/qpen.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QVBoxLayout \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qboxlayout.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qlayout.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qlayoutitem.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qgridlayout.h \
-		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QWidget \
+		../ThuNg/data_structure.h \
+		../ThuNg/function.h \
+		../ThuNg/program_object.h \
+		../ThuNg/backend.h \
+		../ThuNg/file.h \
+		ui_mainwindow.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QDateTimeEdit \
+		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qdatetimeedit.h \
+		C:/Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
+		C:/Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.4.2/mingw_64/include/QtWidgets/qdialog.h \
