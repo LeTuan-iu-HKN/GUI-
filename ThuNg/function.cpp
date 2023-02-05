@@ -13,5 +13,3 @@ std::string convertDate(int date) {
 
 	return str.str();
 }
-
-

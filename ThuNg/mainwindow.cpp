@@ -113,6 +113,21 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::displayFormTable(int row, ShippingForm* Form) {
+    ui->tableWidgetDSDiaChi->setRowCount(row + 1);
+    QTableWidgetItem* item[8];
+    for(int i = 0; i < 8; i++)
+           item[i] = new QTableWidgetItem;
+    item[0]->setText(QString::fromStdString(Form->sender_name)); ui->tableWidgetDSDiaChi->setItem(row, 0, item[0]);
+    item[1]->setText(QString::fromStdString(Form->from_address)); ui->tableWidgetDSDiaChi->setItem(row, 1, item[1]);
+    item[2]->setText(QString::fromStdString(Form->receiver_name)); ui->tableWidgetDSDiaChi->setItem(row, 2, item[2]);
+    item[3]->setText(QString::fromStdString(Form->to_address)); ui->tableWidgetDSDiaChi->setItem(row, 3, item[3]);
+    item[4]->setText(QString::fromStdString(convertDate(Form->sent_date))); ui->tableWidgetDSDiaChi->setItem(row, 4, item[4]);
+    item[5]->setText(QString::fromStdString(convertDate(Form->received_date))); ui->tableWidgetDSDiaChi->setItem(row, 5, item[5]);
+    item[6]->setText(QString::number(Form->getType())); ui->tableWidgetDSDiaChi->setItem(row, 6, item[6]);
+    item[7]->setText(QString::number(Form->revenue)); ui->tableWidgetDSDiaChi->setItem(row, 7, item[7]);
+}
+
 //PageThem
 
 void MainWindow::on_pushButton_clicked()
@@ -217,23 +232,13 @@ void MainWindow::on_pushButton_6_clicked()
 
 void MainWindow::on_pushButton_7_clicked()
 {
-    std::vector<ShippingForm*> &temp = List.FormList;
-    TK t;
-    t.diaChiTimKiem = ui->textEdit_52->toPlainText().toStdString();
-    QTableWidgetItem* item[(int) temp.size()][8];
-    for(int i = 0; i < (int) temp.size(); i++)
+    std::vector<int> index = searchIndexFormList(List, ui->textSearch->toPlainText().toStdString());
+    QTableWidgetItem* item[(int) index.size()][8];
+    for(int i = 0; i < (int) index.size(); i++)
         for(int j = 0; j < 8; j++)
             item[i][j] = new QTableWidgetItem;
 
-    for(int i = 0; i < (int) temp.size(); i++) {
-        ui->tableWidgetDSDiaChi->setRowCount(i+1);
-        item[i][0]->setText(QString::fromStdString(temp[i]->sender_name)); ui->tableWidgetDSDiaChi->setItem(i, 0, item[i][0]);
-        item[i][1]->setText(QString::fromStdString(temp[i]->from_address)); ui->tableWidgetDSDiaChi->setItem(i, 1, item[i][1]);
-        item[i][2]->setText(QString::fromStdString(temp[i]->receiver_name)); ui->tableWidgetDSDiaChi->setItem(i, 2, item[i][2]);
-        item[i][3]->setText(QString::fromStdString(temp[i]->to_address)); ui->tableWidgetDSDiaChi->setItem(i, 3, item[i][3]);
-        item[i][4]->setText(QString::fromStdString(convertDate(temp[i]->sent_date))); ui->tableWidgetDSDiaChi->setItem(i, 4, item[i][4]);
-        item[i][5]->setText(QString::fromStdString(convertDate(temp[i]->received_date))); ui->tableWidgetDSDiaChi->setItem(i, 5, item[i][5]);
-        item[i][6]->setText(QString::number(temp[i]->getType())); ui->tableWidgetDSDiaChi->setItem(i, 6, item[i][6]);
-        item[i][7]->setText(QString::number(temp[i]->revenue)); ui->tableWidgetDSDiaChi->setItem(i, 7, item[i][7]);
+    for(int i = 0; i < (int) index.size(); i++) {
+        displayFormTable(i, List.FormList[index[i]]);
     }
 }

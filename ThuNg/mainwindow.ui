@@ -32,7 +32,7 @@
      <bool>false</bool>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>6</number>
     </property>
     <widget class="QWidget" name="GiaoDienChinh0">
      <widget class="QLabel" name="label0">
@@ -628,7 +628,7 @@
        <rect>
         <x>180</x>
         <y>130</y>
-        <width>281</width>
+        <width>323</width>
         <height>371</height>
        </rect>
       </property>
@@ -1790,7 +1790,7 @@
        <string>Địa chỉ :</string>
       </property>
      </widget>
-     <widget class="QTextEdit" name="textEdit_52">
+     <widget class="QTextEdit" name="textSearch">
       <property name="geometry">
        <rect>
         <x>150</x>
@@ -1860,12 +1860,12 @@
       </column>
       <column>
        <property name="text">
-        <string>Ngày nhận</string>
+        <string>Ngày gửi</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>Ngày gửi</string>
+        <string>Ngày nhận</string>
        </property>
       </column>
       <column>
@@ -1901,7 +1901,7 @@
      <x>0</x>
      <y>0</y>
      <width>886</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

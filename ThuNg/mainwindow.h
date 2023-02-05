@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "data_structure.h"
 #include "program_object.h"
+#include "backend.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,6 +18,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void displayFormTable(int row, ShippingForm* Form);
 
 private slots:
 

@@ -131,7 +131,7 @@ public:
     QWidget *TimTheoDiaChi6;
     QLabel *label0_23;
     QLabel *label0_24;
-    QTextEdit *textEdit_52;
+    QTextEdit *textSearch;
     QPushButton *pushButton_26;
     QTableWidget *tableWidgetDSDiaChi;
     QPushButton *pushButton_7;
@@ -322,7 +322,7 @@ public:
         label0_5->setAutoFillBackground(false);
         verticalLayoutWidget = new QWidget(ThemThanhCong3);
         verticalLayoutWidget->setObjectName("verticalLayoutWidget");
-        verticalLayoutWidget->setGeometry(QRect(180, 130, 281, 371));
+        verticalLayoutWidget->setGeometry(QRect(180, 130, 323, 371));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -637,10 +637,10 @@ public:
         label0_24->setGeometry(QRect(30, 80, 101, 36));
         label0_24->setFont(font1);
         label0_24->setAutoFillBackground(false);
-        textEdit_52 = new QTextEdit(TimTheoDiaChi6);
-        textEdit_52->setObjectName("textEdit_52");
-        textEdit_52->setGeometry(QRect(150, 70, 571, 41));
-        textEdit_52->setFont(font11);
+        textSearch = new QTextEdit(TimTheoDiaChi6);
+        textSearch->setObjectName("textSearch");
+        textSearch->setGeometry(QRect(150, 70, 571, 41));
+        textSearch->setFont(font11);
         pushButton_26 = new QPushButton(TimTheoDiaChi6);
         pushButton_26->setObjectName("pushButton_26");
         pushButton_26->setGeometry(QRect(720, 0, 151, 40));
@@ -674,7 +674,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 886, 21));
+        menubar->setGeometry(QRect(0, 0, 886, 25));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -682,7 +682,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(6);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -791,9 +791,9 @@ public:
         QTableWidgetItem *___qtablewidgetitem11 = tableWidgetDSDiaChi->horizontalHeaderItem(3);
         ___qtablewidgetitem11->setText(QCoreApplication::translate("MainWindow", "\304\220\341\273\213a ch\341\273\211 nh\341\272\255n", nullptr));
         QTableWidgetItem *___qtablewidgetitem12 = tableWidgetDSDiaChi->horizontalHeaderItem(4);
-        ___qtablewidgetitem12->setText(QCoreApplication::translate("MainWindow", "Ng\303\240y nh\341\272\255n", nullptr));
+        ___qtablewidgetitem12->setText(QCoreApplication::translate("MainWindow", "Ng\303\240y g\341\273\255i", nullptr));
         QTableWidgetItem *___qtablewidgetitem13 = tableWidgetDSDiaChi->horizontalHeaderItem(5);
-        ___qtablewidgetitem13->setText(QCoreApplication::translate("MainWindow", "Ng\303\240y g\341\273\255i", nullptr));
+        ___qtablewidgetitem13->setText(QCoreApplication::translate("MainWindow", "Ng\303\240y nh\341\272\255n", nullptr));
         QTableWidgetItem *___qtablewidgetitem14 = tableWidgetDSDiaChi->horizontalHeaderItem(6);
         ___qtablewidgetitem14->setText(QCoreApplication::translate("MainWindow", "Lo\341\272\241i \304\221\306\241n h\303\240ng", nullptr));
         QTableWidgetItem *___qtablewidgetitem15 = tableWidgetDSDiaChi->horizontalHeaderItem(7);
