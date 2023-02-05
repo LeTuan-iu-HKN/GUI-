@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTableWidget>
 #include "data_structure.h"
 #include "program_object.h"
 #include "backend.h"
@@ -19,7 +20,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void displayFormTable(int row, ShippingForm* Form);
+    void displayFormTable(int row, ShippingForm* Form, QTableWidget*& table);
 
 private slots:
 
