@@ -40,6 +40,10 @@ int DocumentShippingForm::getType() {
 	return DOCUMENT;
 }
 
+std::string DocumentShippingForm::getTypeString() {
+    return std::string("Tài liệu");
+}
+
 double DocumentShippingForm::getShippingPrice(Price custom_price) {
 	return (distance * custom_price.DOC_distance + custom_price.DOC_service);
 }
@@ -55,6 +59,10 @@ PackageShippingForm::~PackageShippingForm() {
 
 int PackageShippingForm::getType() {
 	return PACKAGE;
+}
+
+std::string PackageShippingForm::getTypeString() {
+    return std::string("Bưu kiện");
 }
 
 double PackageShippingForm::getShippingPrice(Price custom_price) {

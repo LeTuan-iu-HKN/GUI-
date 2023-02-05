@@ -118,13 +118,14 @@ void MainWindow::displayFormTable(int row, ShippingForm* Form) {
     QTableWidgetItem* item[8];
     for(int i = 0; i < 8; i++)
            item[i] = new QTableWidgetItem;
+
     item[0]->setText(QString::fromStdString(Form->sender_name)); ui->tableWidgetDSDiaChi->setItem(row, 0, item[0]);
     item[1]->setText(QString::fromStdString(Form->from_address)); ui->tableWidgetDSDiaChi->setItem(row, 1, item[1]);
     item[2]->setText(QString::fromStdString(Form->receiver_name)); ui->tableWidgetDSDiaChi->setItem(row, 2, item[2]);
     item[3]->setText(QString::fromStdString(Form->to_address)); ui->tableWidgetDSDiaChi->setItem(row, 3, item[3]);
     item[4]->setText(QString::fromStdString(convertDate(Form->sent_date))); ui->tableWidgetDSDiaChi->setItem(row, 4, item[4]);
     item[5]->setText(QString::fromStdString(convertDate(Form->received_date))); ui->tableWidgetDSDiaChi->setItem(row, 5, item[5]);
-    item[6]->setText(QString::number(Form->getType())); ui->tableWidgetDSDiaChi->setItem(row, 6, item[6]);
+    item[6]->setText(QString::fromStdString(Form->getTypeString())); ui->tableWidgetDSDiaChi->setItem(row, 6, item[6]);
     item[7]->setText(QString::number(Form->revenue)); ui->tableWidgetDSDiaChi->setItem(row, 7, item[7]);
 }
 
