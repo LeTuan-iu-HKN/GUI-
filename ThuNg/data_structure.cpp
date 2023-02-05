@@ -3,6 +3,7 @@
 Price default_price;
 Price current_price;
 
+//Tran Quang Huy
 ShippingForm::ShippingForm() {
 	this->ID = DEFAULT_ID;
 	this->sender_name = BLANK_TEXT;
@@ -13,15 +14,15 @@ ShippingForm::ShippingForm() {
 	this->received_date = NULL_DATE;
 	this->price = current_price;
 }
-
+//Tran Quang Huy
 ShippingForm::~ShippingForm() {
 	delete this;
 }
-
+//Tran Quang Huy
 bool ShippingForm::isSucceeded() {
 	return !(this->received_date == NULL_DATE);
 }
-
+//Nguyen Trong Tri Kien
 void ShippingForm::inputGeneralInfo(std::ifstream& filein) {
 	filein.ignore();
 	getline(filein, sender_name);
@@ -33,7 +34,7 @@ void ShippingForm::inputGeneralInfo(std::ifstream& filein) {
 	getline(filein, to_address);
 	filein >> received_date;
 }
-
+//Nguyen Trong Tri Kien
 void ShippingForm::inputPriceInfo(std::ifstream& filein) {
 	filein >> price.DOC_service;
 	filein >> price.DOC_distance;
@@ -45,7 +46,7 @@ void ShippingForm::inputPriceInfo(std::ifstream& filein) {
 DocumentShippingForm::~DocumentShippingForm() {
 	delete this;
 }
-
+//Tran Quang Huy
 int DocumentShippingForm::getType() {
 	return DOCUMENT;
 }
@@ -57,58 +58,62 @@ std::string DocumentShippingForm::getTypeString() {
 void DocumentShippingForm::setDetailInfo(double distance) {
 	this->distance = distance;
 }
-
-double DocumentShippingForm::getShippingPrice() {
+//Tran Quang Huy
+double DocumentShippingForm::getRevenue() {
     if(received_date == NULL_DATE) return 0;
 	return (distance * price.DOC_distance + price.DOC_service);
 }
-
+//Nguyen Trong Tri Kien
 void DocumentShippingForm::inputDetailInfo(std::ifstream& filein) {
 	filein >> distance;
 }
 
 /////////////////////////////////////
+//Tran Quang Huy
 PackageShippingForm::~PackageShippingForm() {
 	delete this;
 }
-
+//Tran Quang Huy
 int PackageShippingForm::getType() {
 	return PACKAGE;
 }
-
+//Tran Quang Huy
 std::string PackageShippingForm::getTypeString() {
 	return std::string("Bưu kiện");
 }
-
+//Tran Quang Huy
 void PackageShippingForm::setDetailInfo(double distance, double weight) {
 	this->distance = distance;
 	this->weight = weight;
 }
-
-double PackageShippingForm::getShippingPrice() {
+//Tran Quang Huy
+double PackageShippingForm::getRevenue() {
     if(received_date == NULL_DATE) return 0;
 	return (distance * price.PAC_distance + weight * price.PAC_weight);
 }
-
+//Nguyen Trong Tri Kien
 void PackageShippingForm::inputDetailInfo(std::ifstream& filein) {
 	filein >> distance;
 	filein >> weight;
 }
 
 ///////////////////////////////////
+//Tran Quang Huy
 void ShippingFormList::addForm(ShippingForm*& Form) {
 	this->FormList.push_back(Form);
 }
 
+//Tran Quang Huy
 void ShippingFormList::removeForm(int index) {
 	this->FormList.erase(FormList.begin() + index);
 }
 
+//Tran Quang Huy
 void ShippingFormList::replaceForm(ShippingForm*& NewForm, int index) {
 	this->FormList.insert(FormList.begin() + index, NewForm);
 	this->removeForm(index + 1);
 }
-
+//Nguyen Trong Tri Kien
 void ShippingFormList::inputList(std::ifstream& filein) {
 	ShippingForm* Form;
 

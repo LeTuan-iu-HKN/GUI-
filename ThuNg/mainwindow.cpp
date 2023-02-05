@@ -7,9 +7,6 @@ MainWindow::MainWindow(QWidget* parent)
     ui->setupUi(this);
 }
 
-Price random;
-
-
 void MainWindow::on_pushButton_2_clicked() {
     ui->stackedWidget->setCurrentIndex(1);
 }
@@ -94,7 +91,7 @@ void MainWindow::displayFormTable(int row, ShippingForm* Form, QTableWidget*& ta
     item[4]->setText(QString::fromStdString(convertDate(Form->sent_date))); table->setItem(row, 4, item[4]);
     Form->received_date == NULL_DATE ? item[5]->setText("Đang giao") : item[5]->setText(QString::fromStdString(convertDate(Form->received_date))); table->setItem(row, 5, item[5]);
     item[6]->setText(QString::fromStdString(Form->getTypeString())); table->setItem(row, 6, item[6]);
-    item[7]->setText(QString::number(Form->getShippingPrice())); table->setItem(row, 7, item[7]);
+    item[7]->setText(QString::number(Form->getRevenue())); table->setItem(row, 7, item[7]);
 }
 
 //Page Them
@@ -317,7 +314,7 @@ void MainWindow::on_pushButtonXacNhanThongKeTheoThoiGian_clicked() {
 
     for (int i = 0; i < (int)index.size(); i++) {
         displayFormTable(i, List.FormList[index[i]], ui->tableWidgetDSDoanhThu);
-        revenue += List.FormList[index[i]]->getShippingPrice();
+        revenue += List.FormList[index[i]]->getRevenue();
     }
     ui->label_6->setText(QString::number(revenue));
 }

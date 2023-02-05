@@ -1,5 +1,6 @@
 #include "backend.h"
 
+//Tran Quang Huy
 std::vector<int> searchIndexFormList(ShippingFormList& List, std::string search_str) {
 	std::vector<int> index;
 	for (int i = 0; i < (int)List.FormList.size(); i++) {
@@ -11,6 +12,7 @@ std::vector<int> searchIndexFormList(ShippingFormList& List, std::string search_
 	return std::vector<int>(index);
 }
 
+//Nguyen Le Tuan
 std::vector<int> searchDateIndexFormList(ShippingFormList& List, int start_date, int end_date) {
 	std::vector<int> index;
 	for (int i = 0; i < (int)List.FormList.size(); i++) {

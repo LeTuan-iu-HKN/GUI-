@@ -1,5 +1,5 @@
 #include "file.h"
-
+//Nguyen Trong Tri Kien
 void loadForm(ShippingForm*& Form, std::ifstream& filein) {
 	int type;
 	filein >> type;
@@ -11,7 +11,7 @@ void loadForm(ShippingForm*& Form, std::ifstream& filein) {
 	Form->inputGeneralInfo(filein);
 	Form->inputDetailInfo(filein);
 }
-
+//Nguyen Trong Tri Kien
 void saveInputInfor(ShippingForm*& Form, std::ofstream& fileout) {
 	fileout << Form->getType() << "\n";
 	fileout << Form->sender_name << "\n";
@@ -34,12 +34,12 @@ void saveInputInfor(ShippingForm*& Form, std::ofstream& fileout) {
 	fileout << Form->price.PAC_weight << "\n";
 	fileout << Form->price.DOC_distance;
 }
-
+//Nguyen Trong Tri Kien
 void creatNewFile(std::string file_name) {
 	std::ofstream file(file_name);
 	file.close();
 }
-
+//Nguyen Trong Tri Kien
 bool isFileExist(std::string file_name) {
 	std::ifstream file;
 	file.open(file_name);
@@ -49,15 +49,15 @@ bool isFileExist(std::string file_name) {
 
 	return isExit;
 }
-
+//Nguyen Trong Tri Kien
 void renameFile(const char* old_name, const char* new_name) {
 	rename(old_name, new_name);
 }
-
+//Nguyen Trong Tri Kien
 void removeFile(const char* file_name) {
 	remove(file_name);
 }
-
+//Nguyen Trong Tri Kien
 void printAllFormToFile(ShippingFormList& List) {
 	creatNewFile(INFOR_FILE);
 	std::ofstream fileout;
@@ -73,7 +73,7 @@ void printAllFormToFile(ShippingFormList& List) {
 
 	fileout.close();
 }
-
+//Nguyen Trong Tri Kien
 void printMoneyToFile(Price money) {
 	creatNewFile(MONEY_FILE);
 	std::ofstream fileout;
@@ -84,7 +84,7 @@ void printMoneyToFile(Price money) {
 	fileout << money.PAC_distance;
 	fileout.close();
 }
-
+//Nguyen Trong Tri Kien
 void loadSavedMoney(Price& money, std::string data_file) {
 	std::ifstream filein;
 	filein.open(data_file, std::ios_base::in);
